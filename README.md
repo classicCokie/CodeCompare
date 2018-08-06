@@ -1,7 +1,7 @@
 # Angular Sekeleton
 
 ## Work in Progress
-This Project should serve as starting Point for new Angular applications. It Provides best practise Folder Structure as well as a JWT Authentication. The project however not yet ready to be used in production. This message will be removed once its ready.
+This Project should serve as starting Point for new Angular applications. It Provides best practise Folder Structure as well as a JWT Authentication. The project, however, is not yet ready to be used in production. This message will be removed once its ready.
 
 ## Development server
 
