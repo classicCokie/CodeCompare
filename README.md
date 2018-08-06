@@ -1,6 +1,7 @@
-# Mediator
+# Angular Sekeleton
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+## Work in Progress
+This Project should serve as starting Point for new Angular applications. It Provides best practise Folder Structure as well as a JWT Authentication. The project however not yet ready to be used in production. This message will be removed once its ready.
 
 ## Development server
 
