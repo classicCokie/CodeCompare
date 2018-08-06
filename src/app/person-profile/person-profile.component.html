@@ -1,0 +1,31 @@
+<div class="container personProfile">
+    <div class="fb-profile">
+        <div class="header-picture">
+        </div>
+        <!--
+        <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
+         -->
+
+            <img align="left" class="fb-image-profile thumbnail" src={{person.profile_image}} alt="Profile image example"/>
+            <div class="row">
+                <div class="col personProfile_information">
+                    <div class="fb-profile-text">
+                        <h1>{{person.name}}</h1>
+                        <p>{{person.description}}</p>
+                    </div>
+                </div>
+                <div class="col personProfile_address">
+                    {{person.street}}
+                    <br>
+                    {{person.postcode}}
+                    {{person.city}}
+
+                </div>
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-1">
+            <a routerLink="/suche">Zurück </a>
+        </div>
+    </div>
+</div> <!-- /container -->

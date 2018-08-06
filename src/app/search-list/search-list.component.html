@@ -1,0 +1,42 @@
+<div class="searchList">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <div class="searchList_title">
+                    <h1> Finden Sie jetzt Ihren Mediator </h1>
+                </div>
+            </div>
+        </div>
+
+    <div class="searchList_input">
+        <div class="input-group">
+            <input [(ngModel)]="searchText" (input)="filterPersons()" type="text" class="form-control searchBar" placeholder="Geben Sie Namen, PLZ oder andere Suchebegriffe ein" aria-label="Suchfeld" aria-describedby="button-addon4">
+            <div class="input-group-append" id="button-addon4">
+                <button class="btn btn-outline-secondary" type="button">Suchen</button>
+            </div>
+        </div>
+    </div>
+
+  <table class="table">
+    <thead>
+    </thead>
+    <tbody>
+      <tr (click)="setSelectedPerson(person)" routerLink="/profiel" class="borderRow" *ngFor="let person of displayedPersons">
+        <th > <img class="profile_image" src={{person.profile_image}} /></th>
+        <td >
+          <tr>
+            <td class="personNameField">{{person.name}}<td>
+          </tr>
+          <tr>
+            <td class="personAdressField">{{person.adress}}</td>
+          </tr>
+        </td>
+        <td class="personDescriptionField">{{person.description}}</td>
+        <td><button (click)="setSelectedPerson(person)" routerLink="/profiel" type="button" class="btn btn-outline-primary">Mehr ..</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>

@@ -1,0 +1,55 @@
+.form-control.searchBar.ng-untouched.ng-pristine.ng-valid,
+.form-control.searchBar.ng-pristine.ng-valid.ng-touched,
+.form-control.searchBar.ng-valid.ng-dirty.ng-touched.ng-dirty,
+.form-control.searchBar.ng-valid.ng-dirty.ng-untouched.ng-dirty
+{
+    height: 3.25em !important;
+}
+
+.searchList {
+    font-family: 'Raleway', sans-serif;
+}
+
+.searchList_title {
+    margin: 3em;
+}
+.searchList_input {
+    margin-bottom: 2em;
+}
+
+
+.profile_image {
+    border-radius: 50%;
+}
+
+.table td {
+   text-align: left;
+   vertical-align: text-bottom;
+   border: 0;
+}
+
+.table tr th {
+   border: 0;
+}
+
+.personDescriptionField {
+    font-size: 0.9em;
+}
+
+.personNameField {
+    font-size: 1.5em;
+    color: rgb(97,133,174);
+}
+
+.borderRow {
+    border-bottom: #95a5a6 0.01em solid  !important;
+}
+
+.borderRow:hover {
+  cursor: pointer;
+
+}
+
+.personAdressField {
+    font-size: 0.7em;
+}
