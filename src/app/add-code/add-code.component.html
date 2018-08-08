@@ -1,0 +1,51 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm">
+			<h1> Add the two Code Snippets you would like to comapre</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm">
+			<pre>
+				<code highlight [code]="someCode">
+
+					{{codeToAdd.codeLeft}}
+
+				</code>
+			</pre>
+		</div>
+
+		<div class="col-sm">
+
+			<textarea highlight [lang]="'JavaScript'">
+				{{codeToAdd.codeRight}}
+			</textarea>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm">
+			  <select [(ngModel)]="codeToAdd.language" class="custom-select">
+    			<option selected>Choose Proramming language</option>
+    			<option value="JavaScript">JavaScript</option>
+   				<option value="Python">Python</option>
+    			<option value="C++">C++</option>
+    			<option value="C#">C#</option>
+    			<option value="Java">Java</option>
+    			<option value="Php">Php</option>
+  			  </select>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm">
+			  <textarea [(ngModel)]="codeToAdd.description" class="form-control" aria-label="With textarea" placeholder="Eneter Short Code Description" rows="6"></textarea>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm">
+			             <button (click)="submitCode()" type="submit" class="btn btn-success btn-lg float-left" id="btnLogin">Submit Code</button>
+		</div>
+
+	</div>
+</div>

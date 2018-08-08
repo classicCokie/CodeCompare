@@ -6,6 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { UserWelcomeComponent } from './user-welcome/user-welcome.component';
+import { AddCodeComponent } from './add-code/add-code.component';
+import { ReviewCodeComponent } from './review-code/review-code.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/suche', pathMatch: 'full' },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'anmelden', component: SignUpComponent},
   { path: 'profiel_erstellen', component: CreateProfileComponent},
   { path: 'willkommen', component: UserWelcomeComponent},
+  { path: 'addCode', component: AddCodeComponent},
+  { path: 'reviewCode', component: ReviewCodeComponent}
 
 ];
 

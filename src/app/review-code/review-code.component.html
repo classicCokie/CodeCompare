@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm">
+			<h1> Check the Code and give a like to the Side you like the best </h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm">
+			<pre>
+				<code highlight [code]="someCode" contenteditable>
+
+					{{reviewObject.codeLeft}}
+
+				</code>
+			</pre>
+		</div>
+
+		<div class="col-sm">
+			<pre>
+				<code highlight [code]="someCode" contenteditable>
+
+					{{reviewObject.codeRight}}
+
+				</code>
+			</pre>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm">
+			             <button (click)="login()" type="submit" class="btn btn-success btn-lg float-left" id="btnLogin">Like</button>
+		</div>
+		<div class="col-sm">
+			             <button (click)="login()" type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Like</button>
+		</div>
+	</div>
+</div>

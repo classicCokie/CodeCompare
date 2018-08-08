@@ -10,6 +10,9 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { UserWelcomeComponent } from './user-welcome/user-welcome.component';
+import { HighlightModule } from 'ngx-highlightjs';
+import { AddCodeComponent } from './add-code/add-code.component';
+import { ReviewCodeComponent } from './review-code/review-code.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,15 @@ import { UserWelcomeComponent } from './user-welcome/user-welcome.component';
     LoginComponent,
     SignUpComponent,
     CreateProfileComponent,
-    UserWelcomeComponent
+    UserWelcomeComponent,
+    AddCodeComponent,
+    ReviewCodeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HighlightModule.forRoot({ theme: 'agate'})
   ],
   providers: [],
   bootstrap: [AppComponent]

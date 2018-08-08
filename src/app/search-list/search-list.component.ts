@@ -12,31 +12,6 @@ export class SearchListComponent implements OnInit {
         this.fillPersons();
     }
 
-            // {
-        //     id: 1,
-        //     name: "Hans",
-        //     description: "Tollster Mensch der Erde",
-        //     adress: "Breckenheimerstraße 28a, 65719 Hofheim",
-        //     profile_image: "http://via.placeholder.com/100x100",
-        //     searchField: "Hans Tollster Mensch der Erde"
-        // },
-        // {
-        //     id: 2,
-        //     name: "Peter",
-        //     description: "Nicht so cool",
-        //     adress: "Breckenheimerstraße 28a, 65719 Hofheim",
-        //     profile_image: "http://via.placeholder.com/100x100",
-        //     searchField: "Peter Nicht so cool"
-        // },
-        // {
-        //     id: 3,
-        //     name: "Wurst",
-        //     description: "Auch ziemlich gut",
-        //     adress: "Breckenheimerstraße 28a, 65719 Hofheim",
-        //     profile_image: "http://via.placeholder.com/100x100",
-        //     searchField: "Wurst Auch ziemlich gut"
-        // }
-
     public persons = [];
 
     public displayedPersons;
