@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../services/api-service/api.service';
+
 
 @Component({
   selector: 'abe-add-code',
@@ -7,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCodeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   public codeToAdd =  {
   	codeLeft: "",
   	codeRight: "",
+    codeLeftVotes: "",
+    codeRightVotes: "",
   	language: "",
   	description: ""
   }
@@ -19,8 +23,11 @@ export class AddCodeComponent implements OnInit {
   ngOnInit() {
   }
 
-  public submitCode() {
-  	console.log(this.codeToAdd);
-  }
 
+  public submitCode(code) {
+    this.apiService.addCode(code)
+      .subscribe((data: any) =>  {
+          
+      });
+  }
 }

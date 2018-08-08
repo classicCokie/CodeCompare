@@ -13,6 +13,8 @@ import { UserWelcomeComponent } from './user-welcome/user-welcome.component';
 import { AddCodeComponent } from './add-code/add-code.component';
 import { ReviewCodeComponent } from './review-code/review-code.component';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -24,13 +26,16 @@ import { CodemirrorModule } from '@ctrl/ngx-codemirror';
     CreateProfileComponent,
     UserWelcomeComponent,
     AddCodeComponent,
-    ReviewCodeComponent
+    ReviewCodeComponent,
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CodemirrorModule
+    CodemirrorModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
