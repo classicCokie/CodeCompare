@@ -10,8 +10,8 @@ export class AddCodeComponent implements OnInit {
   constructor() { }
 
   public codeToAdd =  {
-  	codeLeft: "test",
-  	codeRight: "tets",
+  	codeLeft: "",
+  	codeRight: "",
   	language: "",
   	description: ""
   }

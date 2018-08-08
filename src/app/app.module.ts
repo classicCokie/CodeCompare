@@ -10,9 +10,9 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { UserWelcomeComponent } from './user-welcome/user-welcome.component';
-import { HighlightModule } from 'ngx-highlightjs';
 import { AddCodeComponent } from './add-code/add-code.component';
 import { ReviewCodeComponent } from './review-code/review-code.component';
+import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { ReviewCodeComponent } from './review-code/review-code.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HighlightModule.forRoot({ theme: 'agate'})
+    CodemirrorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

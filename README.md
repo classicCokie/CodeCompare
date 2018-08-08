@@ -1,7 +1,7 @@
-# Angular Sekeleton
+# Code Compare
 
-## Work in Progress
-This Project should serve as starting Point for new Angular applications. It Provides best practise Folder Structure as well as a JWT Authentication. The project, however, is not yet ready to be used in production. This message will be removed once its ready.
+## Description
+A Angular Project to compare your code snippets, and have people vote on them. Ever had an argument with a college which code is cleaner or better readable? Let other people have a look and let them vote on it. 
 
 ## Development server
 
