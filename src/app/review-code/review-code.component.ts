@@ -9,11 +9,26 @@ export class ReviewCodeComponent implements OnInit {
 
   constructor() { }
 
+
+  public showVotes = false;
+
   public reviewObject = {
   	codeLeft : " function() { some cool code}",
   	codeRight : " function() { some cool even cooler Code}",
-
+  	codeLeftVotes: 0,
+  	codeRightVotes: 0,
+  	description: "This is a description"
   }
+
+  public vote(votedSide) {
+  	this.reviewObject[votedSide]++;
+  	this.showVotes = true;
+  }
+
+
+
+
+
 
   ngOnInit() {
   }

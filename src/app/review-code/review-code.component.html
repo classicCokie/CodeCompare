@@ -1,25 +1,62 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm">
-			<h1> Check the Code and give a like to the Side you like the best </h1>
+			<h1> Check the Code and give a Like to the Side you like the best </h1>
+			<p> In order to get you unbiased opinion on this snippet, we are going to show you how others voted, after you made your choice. Happy Voting!</p>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-sm">
+			<ngx-codemirror 
+			  [(ngModel)]="reviewObject.codeLeft" 
+			  [options]="{
+			    lineNumbers: true,
+			    theme: 'material',
+			    mode: 'javascript',
+			    readOnly: true
+			  }"
+			></ngx-codemirror>
+
+		</div>
+
+		<div class="col-sm">
+			<ngx-codemirror 
+			  [(ngModel)]="reviewObject.codeLeft" 
+			  [options]="{
+			    lineNumbers: true,
+			    theme: 'material',
+			    mode: 'javascript',
+			    readOnly: true
+			  }"
+			></ngx-codemirror>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm">
+			<p>
+				{{reviewObject.description}}
+			</p>
+		</div>
+	</div>
 		
-
-		</div>
-
+	<div class="row" *ngIf="!showVotes">
 		<div class="col-sm">
-
+			<button (click)="vote('codeLeftVotes')" type="submit" class="btn btn-success btn-lg float-left" id="btnLogin">Like</button>
 		</div>
+		<div class="col-sm">
+			<button (click)="vote('codeRightVotes')" type="submit" class="btn btn-success btn-lg float-left" id="btnLogin">Like</button>
+		</div>
+
 	</div>
-	<div class="row">
+
+	<div class="row" *ngIf="showVotes">
 		<div class="col-sm">
-			             <button (click)="login()" type="submit" class="btn btn-success btn-lg float-left" id="btnLogin">Like</button>
+			<h3>{{reviewObject.codeLeftVotes}}</h3>
 		</div>
 		<div class="col-sm">
-			             <button (click)="login()" type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Like</button>
+			<h3>{{reviewObject.codeRightVotes}}</h3>
 		</div>
+
 	</div>
 </div>
