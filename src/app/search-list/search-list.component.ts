@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonDataService } from '../services/person-data/person-data.service';
+import { CodeDataService } from '../services/code-data/code-data.service';
 import { ApiService } from '../services/api-service/api.service';
 
 
@@ -11,56 +12,32 @@ import { ApiService } from '../services/api-service/api.service';
 export class SearchListComponent implements OnInit {
 
 
-    constructor(public personDataService: PersonDataService, private apiService: ApiService) {
-       // this.fillPersons();
+    constructor(public codeDataService: CodeDataService, private apiService: ApiService) {
         this.getAllCode();
     }
+    public codes;
+    public displayedCodes;
 
-    public persons = [];
-
-    public displayedPersons;
-    public randomName() {
-        return '_' + Math.random().toString(36).substr(2, 9);
-    }
 
     public searchText = "";
 
-    public fillPersons() {
-        for(let i = 0; i < 999999; i++) {
-            let name = this.randomName();
-            let person = {
-                "id": i,
-                "name": name,
-                "description": "Es ist manchmal erstaunlich, wie einfach und nachhaltig sich schwierige Lebenssituationen durch einen neutralen Vermittler verändern und weitere Konflikte vermieden werden können. Coaching und Mediation können oft völlig neue Wege eröffnen.",
-                "street": "Breckenheimerstraße 28a,",
-                "city": "Hofheim",
-                "postcode": "65719",
-                "searchField": "Wurst Auch ziemlich gut",
-                "profile_image": "http://via.placeholder.com/100x100"
-            }
+    public filterCodes() {
 
-            this.persons.push(person);
-        }
-        this.displayedPersons = this.persons.slice(0,20);
-    }
-
-
-    public filterPersons() {
-
-         let allPersons = this.persons.filter((person) => {
-             return person.name.toLocaleLowerCase().includes(this.searchText.toLowerCase());
+         let allCodes = this.codes.filter((code) => {
+             return code.title.toLocaleLowerCase().includes(this.searchText.toLowerCase());
          });
-         this.displayedPersons = allPersons.slice(0,20);
+         this.displayedCodes = allCodes.slice(0,20);
+    }
+    
+    public setSelectedCode(selectedCode) {
+       this.codeDataService.setCode(selectedCode);
     }
 
-    public setSelectedPerson(selectedPerson) {
-        this.personDataService.setPerson(selectedPerson);
-    }
-
-    public getAllCode(code) {
+    public getAllCode() {
     this.apiService.getAllCode()
       .subscribe((data: any) =>  {
-        this.displayedPersons = data;
+        this.codes = data;
+        this.displayedCodes = this.codes.slice(0,20);
       });
     }
 

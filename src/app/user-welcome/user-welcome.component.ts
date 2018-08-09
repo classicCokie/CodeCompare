@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CodeDataService } from '../services/code-data/code-data.service';
 
 @Component({
   selector: 'abe-user-welcome',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserWelcomeComponent implements OnInit {
 
-  constructor() { }
+
+	public code;
+
+  	constructor(public codeDataService: CodeDataService) { 
+  		this.code = this.codeDataService.getCode();
+  	}
 
   ngOnInit() {
   }

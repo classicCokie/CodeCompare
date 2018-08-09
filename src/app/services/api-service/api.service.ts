@@ -24,6 +24,11 @@ export class ApiService {
     return this.http.get(this.configUrl + 'allCode', this.httpOptions);
   }
 
+  public vote(votedSide) {
+  	return this.http.put(this.configUrl + 'vote',votedSide, this.httpOptions);
+  }
+
+#TODO implement the vote stuff
 
 
 

@@ -10,7 +10,7 @@
 
     <div class="searchList_input">
         <div class="input-group">
-            <input [(ngModel)]="searchText" (input)="filterPersons()" type="text" class="form-control searchBar" placeholder="Geben Sie Namen, PLZ oder andere Suchebegriffe ein" aria-label="Suchfeld" aria-describedby="button-addon4">
+            <input [(ngModel)]="searchText" (input)="filterCodes()" type="text" class="form-control searchBar" placeholder="Geben Sie Namen, PLZ oder andere Suchebegriffe ein" aria-label="Suchfeld" aria-describedby="button-addon4">
             <div class="input-group-append" id="button-addon4">
                 <button class="btn btn-outline-secondary" type="button">Suchen</button>
             </div>
@@ -21,18 +21,18 @@
     <thead>
     </thead>
     <tbody>
-      <tr (click)="setSelectedPerson(person)" routerLink="/profiel" class="borderRow" *ngFor="let person of displayedPersons">
-        <th > <img class="profile_image" src={{person.profile_image}} /></th>
+      <tr (click)="setSelectedCode(code)" routerLink="/reviewCode" class="borderRow" *ngFor="let code of displayedCodes">
+        <th > <img class="profile_image" src={{code.profile_image}} /></th>
         <td >
           <tr>
-            <td class="personNameField">{{person.title}}<td>
+            <td class="codeTitleField">{{code.title}}<td>
           </tr>
           <tr>
-            <td class="personAdressField">{{person.language}}</td>
+            <td class="codeLanguageField">{{code.language}}</td>
           </tr>
         </td>
-        <td class="personDescriptionField">{{person.description}}</td>
-        <td><button (click)="setSelectedPerson(person)" routerLink="/reviewCode" type="button" class="btn btn-outline-primary">Mehr ..</button></td>
+        <td class="codeDescriptionField">{{code.description}}</td>
+        <td><button (click)="setSelectedCode(code)" routerLink="/reviewCode" type="button" class="btn btn-outline-primary">Mehr ..</button></td>
       </tr>
     </tbody>
   </table>

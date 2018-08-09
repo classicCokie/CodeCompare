@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CodeDataService } from '../services/code-data/code-data.service';
+import { ApiService } from '../services/api-service/api.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'abe-review-code',
@@ -7,28 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewCodeComponent implements OnInit {
 
-  constructor() { }
-
-
   public showVotes = false;
 
-  public reviewObject = {
-  	codeLeft : " function() { some cool code}",
-  	codeRight : " function() { some cool even cooler Code}",
-  	codeLeftVotes: 0,
-  	codeRightVotes: 0,
-  	description: "This is a description"
+  public reviewObject;
+
+  constructor(public codeDataService: CodeDataService, private router: Router, private apiService: ApiService) { 
+    this.reviewObject = this.codeDataService.getCode();
+
+    if(!this.reviewObject) {
+        this.router.navigate(['/suche'])
+    }
   }
 
   public vote(votedSide) {
   	this.reviewObject[votedSide]++;
   	this.showVotes = true;
+    this.apiService.vote(votedSide);
   }
-
-
-
-
-
 
   ngOnInit() {
   }

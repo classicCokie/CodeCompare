@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api-service/api.service';
+import { CodeDataService } from '../services/code-data/code-data.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -9,7 +11,7 @@ import { ApiService } from '../services/api-service/api.service';
 })
 export class AddCodeComponent implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router, public codeDataService: CodeDataService) { }
 
   public codeToAdd =  {
     title: "",
@@ -28,7 +30,8 @@ export class AddCodeComponent implements OnInit {
   public submitCode(code) {
     this.apiService.addCode(code)
       .subscribe((data: any) =>  {
-        alert("sucess!");
+        this.codeDataService.setCode(code);
+        this.router.navigate(['/welcome'])
       });
   }
 }

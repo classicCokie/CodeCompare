@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'anmelden', component: SignUpComponent},
   { path: 'profiel_erstellen', component: CreateProfileComponent},
-  { path: 'willkommen', component: UserWelcomeComponent},
+  { path: 'welcome', component: UserWelcomeComponent},
   { path: 'addCode', component: AddCodeComponent},
   { path: 'reviewCode', component: ReviewCodeComponent}
 
