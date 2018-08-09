@@ -12,6 +12,7 @@ export class AddCodeComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   public codeToAdd =  {
+    title: "",
   	codeLeft: "",
   	codeRight: "",
     codeLeftVotes: "",
@@ -27,7 +28,7 @@ export class AddCodeComponent implements OnInit {
   public submitCode(code) {
     this.apiService.addCode(code)
       .subscribe((data: any) =>  {
-          
+        alert("sucess!");
       });
   }
 }

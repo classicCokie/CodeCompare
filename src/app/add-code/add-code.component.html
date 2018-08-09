@@ -7,6 +7,17 @@
 
 	<div class="row">
 		<div class="col-sm">
+			  <div class="input-group">
+            <input [(ngModel)]="codeToAdd.title"  type="text" class="form-control searchBar" placeholder="Please enter Tite" aria-label="Title Field" aria-describedby="button-addon4">
+            <div class="input-group-append" id="button-addon4">
+                <button class="btn btn-outline-secondary" type="button">Title</button>
+            </div>
+        </div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm">
 			  <select [(ngModel)]="codeToAdd.language" class="custom-select">
     			<option selected>Choose Proramming language</option>
     			<option value="JavaScript">JavaScript</option>
@@ -18,11 +29,11 @@
   			  </select>
 		</div>
 	</div>
-	
+
 	<div class="row">
 		<div class="col-sm">
-			<ngx-codemirror 
-			  [(ngModel)]="codeToAdd.codeLeft" 
+			<ngx-codemirror
+			  [(ngModel)]="codeToAdd.codeLeft"
 			  [options]="{
 			    lineNumbers: true,
 			    theme: 'material',
@@ -34,8 +45,8 @@
 
 		<div class="col-sm">
 
-			<ngx-codemirror 
-			  [(ngModel)]="codeToAdd.codeRight" 
+			<ngx-codemirror
+			  [(ngModel)]="codeToAdd.codeRight"
 			  [options]="{
 			    lineNumbers: true,
 			    theme: 'material',
@@ -45,11 +56,11 @@
 
 		</div>
 	</div>
-	
+
 
 	<div class="row">
 		<div class="col-sm">
-			  <textarea [(ngModel)]="codeToAdd.description" class="form-control" aria-label="With textarea" placeholder="Eneter Short Code Description" rows="6"></textarea>
+			  <textarea [(ngModel)]="codeToAdd.description" class="form-control" aria-label="With textarea" placeholder="Enter Short Code Description" rows="6"></textarea>
 		</div>
 	</div>
 	<div class="row">

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonDataService } from '../services/person-data/person-data.service';
+import { ApiService } from '../services/api-service/api.service';
+
+
 @Component({
   selector: 'abe-search-list',
   templateUrl: './search-list.component.html',
@@ -8,8 +11,9 @@ import { PersonDataService } from '../services/person-data/person-data.service';
 export class SearchListComponent implements OnInit {
 
 
-    constructor(public personDataService: PersonDataService) {
-        this.fillPersons();
+    constructor(public personDataService: PersonDataService, private apiService: ApiService) {
+       // this.fillPersons();
+        this.getAllCode();
     }
 
     public persons = [];
@@ -22,7 +26,7 @@ export class SearchListComponent implements OnInit {
     public searchText = "";
 
     public fillPersons() {
-        for(let i = 0; i < 100000; i++) {
+        for(let i = 0; i < 999999; i++) {
             let name = this.randomName();
             let person = {
                 "id": i,
@@ -51,6 +55,13 @@ export class SearchListComponent implements OnInit {
 
     public setSelectedPerson(selectedPerson) {
         this.personDataService.setPerson(selectedPerson);
+    }
+
+    public getAllCode(code) {
+    this.apiService.getAllCode()
+      .subscribe((data: any) =>  {
+        this.displayedPersons = data;
+      });
     }
 
 

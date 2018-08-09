@@ -20,6 +20,10 @@ export class ApiService {
   	return this.http.post(this.configUrl + 'addCode', code, this.httpOptions);
   }
 
+  public getAllCode() {
+    return this.http.get(this.configUrl + 'allCode', this.httpOptions);
+  }
+
 
 
 
