@@ -42,10 +42,10 @@
 		
 	<div class="row" *ngIf="!showVotes">
 		<div class="col-sm">
-			<button (click)="vote('codeLeftVotes')" type="submit" class="btn btn-success btn-lg float-left" id="btnLogin">Like</button>
+			<button (click)="voteLeft()" type="submit" class="btn btn-success btn-lg float-left" id="btnLogin">Like</button>
 		</div>
 		<div class="col-sm">
-			<button (click)="vote('codeRightVotes')" type="submit" class="btn btn-success btn-lg float-left" id="btnLogin">Like</button>
+			<button (click)="voteRight()" type="submit" class="btn btn-success btn-lg float-left" id="btnLogin">Like</button>
 		</div>
 
 	</div>

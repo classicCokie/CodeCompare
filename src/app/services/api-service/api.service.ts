@@ -24,13 +24,12 @@ export class ApiService {
     return this.http.get(this.configUrl + 'allCode', this.httpOptions);
   }
 
-  public vote(votedSide) {
-  	return this.http.put(this.configUrl + 'vote',votedSide, this.httpOptions);
+  public voteLeft(id) {
+    return this.http.post(this.configUrl + 'vote/left', id, this.httpOptions);
   }
 
-#TODO implement the vote stuff
-
-
-
+  public voteRight(id) {
+    return this.http.post(this.configUrl + 'vote/right', id, this.httpOptions);
+  }
 
 }

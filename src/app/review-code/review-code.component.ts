@@ -18,14 +18,32 @@ export class ReviewCodeComponent implements OnInit {
     this.reviewObject = this.codeDataService.getCode();
 
     if(!this.reviewObject) {
-        this.router.navigate(['/suche'])
+        this.router.navigate(['/search'])
     }
   }
 
-  public vote(votedSide) {
-  	this.reviewObject[votedSide]++;
-  	this.showVotes = true;
-    this.apiService.vote(votedSide);
+  public voteLeft() {
+
+    this.reviewObject.codeLeftVotes++;
+    this.showVotes = true;
+
+    this.apiService.voteLeft({id: this.reviewObject._id})
+      .subscribe((data: any) =>  {
+        console.log('came back');
+      });
+
+  }
+  
+  public voteRight() {
+
+    this.reviewObject.codeRightVotes++;
+    this.showVotes = true;
+
+    this.apiService.voteRight({id: this.reviewObject._id})
+      .subscribe((data: any) =>  {
+        console.log('came back');
+      });
+
   }
 
   ngOnInit() {
