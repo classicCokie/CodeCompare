@@ -6,50 +6,54 @@
     height: 3.25em !important;
 }
 
-.searchList {
-    font-family: 'Raleway', sans-serif;
-}
-
 .searchList_title {
-    margin: 3em;
+    margin-top: 5em;
+    margin-bottom: 2em;
 }
 .searchList_input {
     margin-bottom: 2em;
 }
 
 
-.profile_image {
-    border-radius: 50%;
+body{margin-top:20px;
+background:#eee;
 }
 
-.table td {
-   text-align: left;
-   vertical-align: text-bottom;
-   border: 0;
+/* CONTACTS */
+.contact-box {
+  background-color: #ffffff;
+  border: 1px solid #e7eaec;
+  padding: 20px;
+  margin-bottom: 20px;
 }
-
-.table tr th {
-   border: 0;
+.contact-box > a {
+  color: inherit;
 }
-
-.codeDescriptionField {
-    font-size: 0.9em;
+.contact-box.center-version {
+  border: 1px solid #e7eaec;
+  padding: 0;
 }
-
-.codeTitleField {
-    font-size: 1.5em;
-    color: rgb(97,133,174);
+.contact-box.center-version > a {
+  display: block;
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
 }
-
-.borderRow {
-    border-bottom: #95a5a6 0.01em solid  !important;
+.contact-box.center-version > a img {
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-
-.borderRow:hover {
-  cursor: pointer;
-
+.contact-box.center-version address {
+  margin-bottom: 0;
 }
-
-.codeLanguageField {
-    font-size: 0.7em;
+.contact-box .contact-box-footer {
+  text-align: center;
+  background-color: #ffffff;
+  border-top: 1px solid #e7eaec;
+  padding: 15px 20px;
+}
+a{
+    text-decoration:none !important;    
 }

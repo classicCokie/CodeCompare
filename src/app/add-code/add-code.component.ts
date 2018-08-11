@@ -25,12 +25,45 @@ export class AddCodeComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   public submitCode(code) {
+
+    if(!this.validateCode(code)) {
+      alert('Please Fill out all Fields');
+      return;
+    }
+
     this.apiService.addCode(code)
       .subscribe((data: any) =>  {
-        this.codeDataService.setCode(code);
+        this.codeDataService.setCode(data);
         this.router.navigate(['/welcome'])
       });
   }
+
+  private validateCode(code) {
+
+    if(code.title.length < 1) {
+      return false;
+    }
+
+    if(code.codeLeft.length < 1) {
+      return false;
+    }
+
+    if(code.codeRight.length < 1) {
+      return false;
+    }
+
+    if(code.language.length < 1) {
+      return false;
+    }
+
+    if(code.description.length < 1) {
+      return false;
+    }
+
+    return true;
+  }
+
+
 }

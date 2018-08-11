@@ -12,6 +12,7 @@ import { AddCodeComponent } from './add-code/add-code.component';
 import { ReviewCodeComponent } from './review-code/review-code.component';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 import { HttpClientModule } from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     CodemirrorModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
