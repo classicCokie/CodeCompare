@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  private configUrl = "http://127.0.0.1:8803/";
+  private configUrl = environment.apiUrl;
 
   private httpOptions = {
 	  headers: new HttpHeaders({
