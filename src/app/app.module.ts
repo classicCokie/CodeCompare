@@ -24,7 +24,6 @@ import { HttpClientModule } from '@angular/common/http';
     AddCodeComponent,
     ReviewCodeComponent,
     AppComponent,
-    
   ],
   imports: [
     BrowserModule,
