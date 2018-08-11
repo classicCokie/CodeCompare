@@ -31,5 +31,4 @@ export class ApiService {
   public voteRight(id) {
     return this.http.post(this.configUrl + 'vote/right', id, this.httpOptions);
   }
-
 }
