@@ -25,8 +25,7 @@ export class AddCodeComponent implements OnInit {
 
   ngOnInit() {
   }
-
-
+  
   public submitCode(code) {
     this.apiService.addCode(code)
       .subscribe((data: any) =>  {
