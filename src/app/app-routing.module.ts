@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'profiel_erstellen', component: CreateProfileComponent},
   { path: 'welcome', component: UserWelcomeComponent},
   { path: 'addCode', component: AddCodeComponent},
-  { path: 'reviewCode', component: ReviewCodeComponent}
+  { path: 'reviewCode/:id', component: ReviewCodeComponent}
 
 ];
 

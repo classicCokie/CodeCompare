@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SearchListComponent } from './search-list/search-list.component';
@@ -12,7 +11,8 @@ import { AddCodeComponent } from './add-code/add-code.component';
 import { ReviewCodeComponent } from './review-code/review-code.component';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 import { HttpClientModule } from '@angular/common/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -30,11 +30,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     CodemirrorModule,
     HttpClientModule,
     NgbModule.forRoot(),
   ],
-  providers: [],
+  providers: [HttpClientModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

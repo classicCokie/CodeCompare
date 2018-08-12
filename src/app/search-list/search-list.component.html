@@ -20,15 +20,14 @@
   <div class="row" >
         <div class="col-md-4" *ngFor="let code of displayedCodes">
             <div class="contact-box center-version">
-                <a >
+                <a>
                     <h1>{{code.language}}</h1>
                     <h3 class="m-b-xs"><strong>{{code.title}}</strong></h3>
-        
                     <div class="font-bold">{{code.description}}</div>
                 </a>
                 <div class="contact-box-footer">
                     <div class="m-t-xs btn-group">
-                       <button (click)="setSelectedCode(code)" routerLink="/reviewCode" type="button" class="btn btn-outline-primary">More ..</button>
+                       <button (click)="setSelectedCode(code)" routerLink="/reviewCode/{{code._id}}" type="button" class="btn btn-outline-primary">More ..</button>
                     </div>
                 </div>
         

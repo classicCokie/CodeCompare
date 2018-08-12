@@ -1,14 +1,14 @@
 <div class="container">
 	<div class="row add_code_titleField">
 		<div class="col-sm">
-			<h1> Add the two Code Snippets you would like to compare</h1>
+			<h1> Add two Code Snippets you want to compare</h1>
 		</div>
 	</div>
 
 	<div class="row ">
 		<div class="col-sm ">
 			  <div class="input-group">
-            <input [(ngModel)]="codeToAdd.title"  type="text" class="form-control searchBar" placeholder="Please enter Tite" aria-label="Title Field" aria-describedby="button-addon4">
+            <input name="TitleInput"[(ngModel)]="codeToAdd.title" type="text" class="form-control searchBar" placeholder="Please enter Tite" aria-label="Title Field" aria-describedby="button-addon4">
         </div>
 		</div>
 	</div>
@@ -16,38 +16,40 @@
 	<div class="row">
 		<div class="col-sm">
 			  <select [(ngModel)]="codeToAdd.language" class="custom-select">
-    			<option selected>Choose Proramming language</option>
-    			<option value="JavaScript">JavaScript</option>
+    			<option value="none">Choose Proramming language</option>
+    			<option value="javascript">JavaScript</option>
    				<option value="Python">Python</option>
-    			<option value="C++">C++</option>
+    			<option value="useCPP">C++</option>
     			<option value="C#">C#</option>
     			<option value="Java">Java</option>
     			<option value="Php">Php</option>
+    			<option value="typescript">TypeScript</option>
   			  </select>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-sm">
+			<h4> Snippet one</h4>
 			<ngx-codemirror
 			  [(ngModel)]="codeToAdd.codeLeft"
 			  [options]="{
 			    lineNumbers: true,
 			    theme: 'material',
-			    mode: 'javascript'
+			    mode: codeToAdd.language
 			  }"
 			></ngx-codemirror>
 
 		</div>
 
 		<div class="col-sm">
-
+			<h4> Snippet two</h4>
 			<ngx-codemirror
 			  [(ngModel)]="codeToAdd.codeRight"
 			  [options]="{
 			    lineNumbers: true,
 			    theme: 'material',
-			    mode: 'javascript'
+			    mode: codeToAdd.language
 			  }"
 			></ngx-codemirror>
 

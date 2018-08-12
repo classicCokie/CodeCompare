@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CodeDataService } from '../services/code-data/code-data.service';
-import {Router} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'abe-user-welcome',
@@ -11,17 +12,30 @@ export class UserWelcomeComponent implements OnInit {
 
 
 	public code;
+	public reviewUrl;
+	private configUrl = environment.hostUrl;
 
-  	constructor(public codeDataService: CodeDataService, private router: Router) { 
+  	constructor(
+  		public codeDataService: CodeDataService,
+  		private router: Router,
+  		private route: ActivatedRoute
+  		) { 
+
   		this.code = this.codeDataService.getCode();
 
   		if(!this.code) {
         	this.router.navigate(['/search'])
+        	return;
     	}
-  		console.log(this.code);
+    	this.reviewUrl = this.createReviewUrl(this.code._id);
   	}
 
   ngOnInit() {
+  }
+
+
+  private createReviewUrl(id) {
+  	return this.configUrl + "reviewCode/" +id;
   }
 
 }

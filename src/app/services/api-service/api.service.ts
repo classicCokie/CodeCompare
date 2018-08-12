@@ -25,6 +25,10 @@ export class ApiService {
     return this.http.get(this.configUrl + 'allCode', this.httpOptions);
   }
 
+  public getCodeById(id) {
+    return this.http.get(this.configUrl + 'code/'+ id, this.httpOptions);
+  }
+
   public voteLeft(id) {
     return this.http.post(this.configUrl + 'vote/left', id, this.httpOptions);
   }

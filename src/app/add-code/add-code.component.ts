@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api-service/api.service';
 import { CodeDataService } from '../services/code-data/code-data.service';
 import {Router} from '@angular/router';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class AddCodeComponent implements OnInit {
   	codeRight: "",
     codeLeftVotes: "",
     codeRightVotes: "",
-  	language: "",
+  	language: "none",
   	description: ""
   }
 
