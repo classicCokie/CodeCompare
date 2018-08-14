@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'welcome', component: UserWelcomeComponent},
   { path: 'addCode', component: AddCodeComponent},
   { path: 'reviewCode/:id', component: ReviewCodeComponent}
-
 ];
 
 @NgModule({

@@ -6,10 +6,15 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class ApiService {
-
-  constructor(private http: HttpClient) { }
-
   private configUrl = environment.apiUrl;
+  private userIpAdress;
+
+  constructor(private http: HttpClient) {
+      this.http.get<{ip:string}>('https://jsonip.com')
+        .subscribe( data => {
+            this.userIpAdress = data.ip;
+        }) 
+  }
 
   private httpOptions = {
 	  headers: new HttpHeaders({
@@ -18,7 +23,7 @@ export class ApiService {
 	}
 
   public addCode(code) {
-  	return this.http.post(this.configUrl + 'addCode', code, this.httpOptions);
+    return this.http.post(this.configUrl + 'addCode', code, this.httpOptions);
   }
 
   public getAllCode() {
@@ -30,10 +35,10 @@ export class ApiService {
   }
 
   public voteLeft(id) {
-    return this.http.post(this.configUrl + 'vote/left', id, this.httpOptions);
+    return this.http.post(this.configUrl + 'vote/left', {"id": id, "IP": this.userIpAdress}, this.httpOptions);
   }
 
   public voteRight(id) {
-    return this.http.post(this.configUrl + 'vote/right', id, this.httpOptions);
+    return this.http.post(this.configUrl + 'vote/right', {"id": id, "IP": this.userIpAdress}, this.httpOptions);
   }
 }

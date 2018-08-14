@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CodeDataService } from '../services/code-data/code-data.service';
 import { ApiService } from '../services/api-service/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from '../services/auth-service/auth.service';
 
 @Component({
   selector: 'abe-review-code',
@@ -27,8 +28,11 @@ export class ReviewCodeComponent implements OnInit {
     public codeDataService: CodeDataService, 
     private router: Router, 
     private apiService: ApiService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authService: AuthService
     ) { 
+    
+    this.authService.setUserIpAddress();
 
     this.route.params
       .subscribe(params => {
