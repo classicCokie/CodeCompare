@@ -32,10 +32,12 @@ export class SearchListComponent implements OnInit {
   
     public filterCodes() {
         let allCodes = this.codes.filter((code) => {
-            return code.title.toLocaleLowerCase().includes(this.searchText.toLowerCase());
+            return code.title.toLocaleLowerCase().includes(this.searchText.toLowerCase()) ||
+                   code.description.toLocaleLowerCase().includes(this.searchText.toLowerCase()) ||
+                   code.language.toLocaleLowerCase().includes(this.searchText.toLowerCase()) ||
+                   code._id.toLocaleLowerCase().includes(this.searchText.toLowerCase());
         });
         this.displayedCodes = allCodes.slice(0,20);
-
         this.displayedCodes = this.shortenFields(this.displayedCodes);
     }
 

@@ -1,12 +1,12 @@
 <div class="container">
 	<div class="row add_code_titleField">
-		<div class="col-sm">
+		<div class="col-lg">
 			<h1> Add two Code Snippets you want to compare</h1>
 		</div>
 	</div>
 
 	<div class="row ">
-		<div class="col-sm ">
+		<div class="col-lg ">
 			  <div class="input-group">
             <input name="TitleInput"[(ngModel)]="codeToAdd.title" type="text" class="form-control searchBar" placeholder="Please enter Tite" aria-label="Title Field" aria-describedby="button-addon4" maxlength="20">
         </div>
@@ -14,12 +14,12 @@
 	</div>
 
 	<div class="row">
-		<div class="col-sm">
+		<div class="col-lg">
 			  <select [(ngModel)]="codeToAdd.language" class="custom-select">
     			<option value="none">Choose Proramming language</option>
     			<option value="javascript">JavaScript</option>
-   				<option value="Python">Python</option>
-    			<option value="useCPP">C++</option>
+   				<option value="python">Python</option>
+    			<option value="c++">C++</option>
     			<option value="C#">C#</option>
     			<option value="Java">Java</option>
     			<option value="Php">Php</option>
@@ -29,7 +29,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-sm">
+		<div class="col-12">
 			<h4> Snippet one</h4>
 			<ngx-codemirror
 			  [(ngModel)]="codeToAdd.codeLeft"
@@ -42,7 +42,7 @@
 
 		</div>
 
-		<div class="col-sm">
+		<div class="col-12">
 			<h4> Snippet two</h4>
 			<ngx-codemirror
 			  [(ngModel)]="codeToAdd.codeRight"
