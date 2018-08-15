@@ -5,6 +5,9 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 import 'codemirror/mode/javascript/javascript';
+import 'codemirror/mode/php/php';
+import 'codemirror/mode/python/python';
+import 'codemirror/mode/ruby/ruby';
 import 'codemirror/mode/markdown/markdown';
 
 if (environment.production) {

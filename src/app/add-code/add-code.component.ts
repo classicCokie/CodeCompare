@@ -39,6 +39,8 @@ export class AddCodeComponent implements OnChanges{
       return;
     }
 
+    code.shortDescription = this.createShortDescription(code.description);
+
     this.apiService.addCode(code)
       .subscribe((data: any) =>  {
         this.codeDataService.setCode(data);
@@ -74,6 +76,10 @@ export class AddCodeComponent implements OnChanges{
     }
 
     return true;
+  }
+
+  private createShortDescription(fullDescription) {
+    return fullDescription.slice(0, 20);
   }
 
 

@@ -35,10 +35,10 @@ export class ApiService {
   }
 
   public voteLeft(id) {
-    return this.http.post(this.configUrl + 'vote/left', {"id": id, "IP": this.userIpAdress}, this.httpOptions);
+    return this.http.post(this.configUrl + 'vote/left', {"id": id, "userIp": this.userIpAdress}, this.httpOptions);
   }
 
   public voteRight(id) {
-    return this.http.post(this.configUrl + 'vote/right', {"id": id, "IP": this.userIpAdress}, this.httpOptions);
+    return this.http.post(this.configUrl + 'vote/right', {"id": id, "userIp": this.userIpAdress}, this.httpOptions);
   }
 }

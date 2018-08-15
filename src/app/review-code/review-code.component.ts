@@ -61,9 +61,9 @@ export class ReviewCodeComponent implements OnInit {
     this.reviewObject.codeLeftVotes++;
     this.showVotes = true;
 
-    this.apiService.voteLeft({id: this.reviewObject._id})
+    this.apiService.voteLeft(this.reviewObject._id)
       .subscribe((data: any) =>  {
-        console.log('came back');
+        console.log(data);
       });
 
   }
@@ -73,7 +73,7 @@ export class ReviewCodeComponent implements OnInit {
     this.reviewObject.codeRightVotes++;
     this.showVotes = true;
 
-    this.apiService.voteRight({id: this.reviewObject._id})
+    this.apiService.voteRight(this.reviewObject._id)
       .subscribe((data: any) =>  {
         console.log('came back');
       });

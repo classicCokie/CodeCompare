@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AuthService {
 
-	private userIpAdress;
+	public userIpAdress;
 
     constructor(private http: HttpClient) {}
 
@@ -18,7 +18,6 @@ export class AuthService {
 
     	this.http.get<{ip:string}>('https://jsonip.com')
 	    	.subscribe( data => {
-	      		console.log('th data', data.ip);
 	      		this.userIpAdress = data.ip;
 	 		})
     }

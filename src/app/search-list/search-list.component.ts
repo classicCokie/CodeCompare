@@ -26,7 +26,6 @@ export class SearchListComponent implements OnInit {
             .subscribe((data: any) =>  {
                 this.codes = data;
                 this.displayedCodes = this.codes.slice(0,20);
-                this.displayedCodes = this.shortenFields(this.displayedCodes);
             });
     }
   
@@ -38,14 +37,6 @@ export class SearchListComponent implements OnInit {
                    code._id.toLocaleLowerCase().includes(this.searchText.toLowerCase());
         });
         this.displayedCodes = allCodes.slice(0,20);
-        this.displayedCodes = this.shortenFields(this.displayedCodes);
-    }
-
-    public shortenFields(codes) {
-        return codes.map((code) => {
-            code.description = code.description.slice(0,20)
-            return code;
-        })
     }
     
     public setSelectedCode(selectedCode) {
